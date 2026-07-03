@@ -17,7 +17,17 @@ public class FirstCSVExample {
 	                .setSkipHeaderRecord(true)
 	                .get()
 	                .parse(reader);
-
+	        
+	        /*  For reading Case-Sensitive you can use below code    */
+	        /*
+	         CSVFormat format = CSVFormat.DEFAULT.builder()
+                     .setHeader()
+                     .setSkipHeaderRecord(true)
+                     .setIgnoreHeaderCase(true)
+                     .setTrim(true)
+                     .get();
+	        */
+	
 	        for (CSVRecord record : parser) {
 	            String name = record.get("Name");
 	            String favoriteColor = record.get("Favorite Color");
